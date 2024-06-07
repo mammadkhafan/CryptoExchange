@@ -31,10 +31,10 @@ public class ForgetPasswordController extends SignInMethods{
     private FontAwesomeIcon backIcon;
 
     public void checkEmail() {
-        String input = emailTextField.getText();
-        if(!isEmailValid(input)){
-            emailMessage.setText("Error");
-    }
+        // String input = emailTextField.getText();
+        // if(!isEmailValid(input)){
+        //     emailMessage.setText("Error");
+        // }
     }
 
     public void checkCode() {
