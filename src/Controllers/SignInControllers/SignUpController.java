@@ -43,43 +43,33 @@ public class SignUpController extends SignInMethods{
 
     @FXML
     private void checkFirstName(KeyEvent event) {
-        // Implement your logic here
-        String input = firstNameMessage.getText();
-        String regex = "^[a-zA-Z ]{2,12}$";
-        if(!isValid(input, regex)){
-                usernameMessage.setText("Error");
-        }
+        check(firstNameTextField, firstNameMessage, Regex.nameRegex);
     }
 
     @FXML
     private void checkUsername(KeyEvent event) {
-        // Implement your logic here
-        String input = firstNameMessage.getText();
-        String regex = "^[a-zA-Z ]{2,12}$";
-        if(!isValid(input, regex)){
-                usernameMessage.setText("Error");
-        }
+        check(usernameTextField, usernameMessage, Regex.usernameRegex);
     }
 
     @FXML
     private void checkPhoneNumber(KeyEvent event) {
-        // Implement your logic here
+        check(phoneNumberTextField, phoneNumberMessage, Regex.phoneNumberRegex);
         
     }
 
     @FXML
     private void checkLastName(KeyEvent event) {
-        // Implement your logic here
+        check(lastNameTextField, lastNameMessage, Regex.nameRegex);
     }
 
     @FXML
     private void checkEmail(KeyEvent event) {
-        // Implement your logic here
+        check(emailTextField, emailMessage, Regex.emailRegex);    
     }
 
     @FXML
     private void checkPassword(KeyEvent event) {
-        // Implement your logic here
+        check(passwordPasswordField, passwordMessage, Regex.passwordRegex);
     }
 
     @FXML
