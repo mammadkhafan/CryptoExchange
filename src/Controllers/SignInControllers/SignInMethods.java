@@ -23,21 +23,29 @@ public class SignInMethods {
         }
     }
 
+    public enum ErrorMessage {
+        emailErrorMessage("at least a letter, digit, -/_/. and @yyy.zzz"),
+        usernameErrorMessage("start with letter contain letter, digit, _"),
+        passwordErrorMessage("letter, digit length between 6 to 15"),
+        nameErrorMessage("Just letters and space"),
+        phoneNumberErrorMessage("Just numbers between 4 to 10");
+
+        public String errorMessage;
+
+        ErrorMessage(String errorMessage) {
+            this.errorMessage = errorMessage;
+        }
+    }
+
     public boolean isValid(String input, String regex){
         return input.matches(regex);
     }
 
-    // protected final String emailRegex = "^[a-zA-Z]{1,1}[a-zA-Z0-9-_.]{4,63}@[a-zA-Z]+\\.[a-zA-z]+$";
-    // protected final String usernameRegex = "[a-zA-Z]{1,1}[a-zA-Z0-9_]{2,12}";
-    // protected final String passwordRegex = "^[a-zA-Z0-9]{5,15}$";
-    // protected final String nameRegex = "^[a-zA-Z ]{2,20}$";
-    // protected final String phoneNumberRegex = "^[0-9]{4,10}$";
-
-    public void check(TextField textField, Label label, Regex reg) {
+    public void check(TextField textField, Label label, Regex reg, ErrorMessage errMsg) {
         String input = textField.getText();
         String regex = reg.regexStr;
         if(!isValid(input, regex)){
-            fillToError(label);
+            toError(label, errMsg);
         } else if (isValid(input, regex)) {
             toCorrect(label);
         }
@@ -63,9 +71,11 @@ public class SignInMethods {
     //     return isValid(input, "^[0-9]{4,10}$");
     // }
     //-------------------------------------------------
-    public void fillToError(Label label) {
+    public void toError(Label label, ErrorMessage errMsg) {
         Color red = Color.web("#FF6347");
         label.setTextFill(red);
+
+        label.setText(errMsg.errorMessage);
     }
 
     public void toCorrect(Label label) {
