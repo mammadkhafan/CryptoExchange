@@ -94,5 +94,6 @@ public class SignUpController extends SignInMethods{
     @FXML
     private void afterBack(MouseEvent event) {
         // Implement your logic here
+        
     }
 }
