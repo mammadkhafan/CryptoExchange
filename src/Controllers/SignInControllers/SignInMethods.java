@@ -16,25 +16,25 @@ public class SignInMethods {
     protected final String nameRegex = "^[a-zA-Z ]{2,20}$";
     protected final String phoneNumberRegex = "^[0-9]{4,10}$";
 
-    public boolean isEmailValid(String input){
-        return isValid(input, "^[a-zA-Z]{1,1}[a-zA-Z0-9-_.]{4,63}@[a-zA-Z]+\\.[a-zA-z]+$");
-    }
+    // public boolean isEmailValid(String input){
+    //     return isValid(input, "^[a-zA-Z]{1,1}[a-zA-Z0-9-_.]{4,63}@[a-zA-Z]+\\.[a-zA-z]+$");
+    // }
 
-    public boolean isUsernameValid(String input){
-        return isValid(input, "[a-zA-Z]{1,1}[a-zA-Z0-9_]{2,12}");
-    }
+    // public boolean isUsernameValid(String input){
+    //     return isValid(input, "[a-zA-Z]{1,1}[a-zA-Z0-9_]{2,12}");
+    // }
 
-    public boolean isPasswordValid(String input){
-        return isValid(input, "^[a-zA-Z0-9]{5,15}$");
-    }
+    // public boolean isPasswordValid(String input){
+    //     return isValid(input, "^[a-zA-Z0-9]{5,15}$");
+    // }
 
-    public boolean isNameValid(String input){
-        return isValid(input, "^[a-zA-Z ]{2,20}$");
-    }
+    // public boolean isNameValid(String input){
+    //     return isValid(input, "^[a-zA-Z ]{2,20}$");
+    // }
 
-    public boolean isPhoneNumberValid(String input){
-        return isValid(input, "^[0-9]{4,10}$");
-    }
+    // public boolean isPhoneNumberValid(String input){
+    //     return isValid(input, "^[0-9]{4,10}$");
+    // }
     //-------------------------------------------------
     public void fillToError(Label label) {
         Color red = Color.web("#FF6347");

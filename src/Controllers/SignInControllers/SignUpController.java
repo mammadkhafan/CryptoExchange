@@ -1,7 +1,13 @@
 package Controllers.SignInControllers;
 
+import java.io.IOException;
+
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -9,6 +15,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 
 public class SignUpController extends SignInMethods{
@@ -29,6 +36,10 @@ public class SignUpController extends SignInMethods{
 
     @FXML
     private ImageView captchaImageView;
+
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
 
     @FXML
     private void checkFirstName(KeyEvent event) {
@@ -92,8 +103,13 @@ public class SignUpController extends SignInMethods{
     }
 
     @FXML
-    private void afterBack(MouseEvent event) {
+    private void afterBack(MouseEvent event) throws IOException {
         // Implement your logic here
-        
+        root = FXMLLoader.load(getClass().getResource("../../FXMLFiles/LoginPage.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
     }
 }
