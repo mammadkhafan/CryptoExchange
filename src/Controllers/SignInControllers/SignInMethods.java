@@ -1,5 +1,3 @@
-
-
 package Controllers.SignInControllers;
 
 
@@ -24,11 +22,11 @@ public class SignInMethods {
     }
 
     public enum ErrorMessage {
-        emailErrorMessage("at least a letter, digit, -/_/. and @yyy.zzz"),
-        usernameErrorMessage("start with letter contain letter, digit, _"),
-        passwordErrorMessage("letter, digit length between 6 to 15"),
-        nameErrorMessage("Just letters and space"),
-        phoneNumberErrorMessage("Just numbers between 4 to 10");
+        emailErrorMessage("valid chars: a-Z(one at least) 0-9 - _ ."),
+        usernameErrorMessage("valid chars: (start with)a-Z 0-9 _"),
+        passwordErrorMessage("valid chars: a-Z 0-9 (length: min 6-max 15)"),
+        nameErrorMessage("valid chars: a-Z space"),
+        phoneNumberErrorMessage("valid chars: 0-9 (length: min 4-max 10)");
 
         public String errorMessage;
 
@@ -51,37 +49,48 @@ public class SignInMethods {
         }
     }
 
-    // public boolean isEmailValid(String input){
-    //     return isValid(input, "^[a-zA-Z]{1,1}[a-zA-Z0-9-_.]{4,63}@[a-zA-Z]+\\.[a-zA-z]+$");
-    // }
+    public boolean isEveryThingOk(Label[] messages) {
+        boolean isEveryThingOk = true;
+        for (int i = 0; i < messages.length; i++) {
+            if (messages[i] == null || !messages[i].getTextFill().equals(green)) {
+                isEveryThingOk = false;
+                break;
+            }
+        }
 
-    // public boolean isUsernameValid(String input){
-    //     return isValid(input, "[a-zA-Z]{1,1}[a-zA-Z0-9_]{2,12}");
-    // }
+        if (!isEveryThingOk) {
+            findErrors(messages);
+        }
 
-    // public boolean isPasswordValid(String input){
-    //     return isValid(input, "^[a-zA-Z0-9]{5,15}$");
-    // }
+        return isEveryThingOk;
+    }
 
-    // public boolean isNameValid(String input){
-    //     return isValid(input, "^[a-zA-Z ]{2,20}$");
-    // }
-
-    // public boolean isPhoneNumberValid(String input){
-    //     return isValid(input, "^[0-9]{4,10}$");
-    // }
+    public void findErrors(Label[] messages) {
+        for (int i = 0; i < messages.length; i++) {
+            if (messages[i] != null && messages[i].getTextFill().equals(green)) {
+                //Do nothing
+            } else {
+                if (messages[i] == null) {
+                    messages[i] = new Label();
+                }
+                messages[i].setText("* Fill this field correctlly");
+                messages[i].setTextFill(red);
+            }
+        }
+    }
     //-------------------------------------------------
+    protected Color green = Color.web("#03A313");
+    protected Color red = Color.web("#FF6347");
+    protected Color orang = Color.web("#FFA515");
     public void toError(Label label, ErrorMessage errMsg) {
-        Color red = Color.web("#FF6347");
-        label.setTextFill(red);
+        label.setTextFill(orang);
 
         label.setText(errMsg.errorMessage);
     }
 
     public void toCorrect(Label label) {
-        Color green = Color.web("#7CFC00");
         label.setTextFill(green);
 
-        label.setText("Valid Input");
+        label.setText("valid Input");
     }
 }

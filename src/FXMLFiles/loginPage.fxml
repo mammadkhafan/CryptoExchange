@@ -14,9 +14,9 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #955511;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.SignInControllers.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #01579B;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.SignInControllers.LoginController">
    <children>
-      <AnchorPane layoutX="145.0" layoutY="141.0" prefHeight="417.0" prefWidth="450.0" style="-fx-background-color: #01579B;">
+      <AnchorPane layoutX="145.0" layoutY="141.0" prefHeight="417.0" prefWidth="450.0" style="-fx-background-color: white;">
          <children>
             <Label layoutX="176.0" layoutY="14.0" text="Login">
                <font>
@@ -81,5 +81,3 @@
       </ImageView>
    </children>
 </AnchorPane>
-
-

@@ -1,7 +1,6 @@
 package Controllers.SignInControllers;
 
 import java.io.IOException;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,19 +16,11 @@ import javafx.stage.Stage;
 
 public class LoginController extends SignInMethods{
     @FXML
-    private Button  
-            loginButton,
-            signUpButton,
-            forgetPasswordButton;
+    private Button  loginButton, signUpButton, forgetPasswordButton;
     @FXML
-    private PasswordField  
-            passwordPasswordField,
-            captchaCodePasswordField;
+    private PasswordField  passwordPasswordField, captchaCodePasswordField;
     @FXML
-    private Label   
-            usernameMessage,
-            passwordMessage,
-            captchaCodeMessage;
+    private Label   usernameMessage, passwordMessage, captchaCodeMessage;
 
     @FXML
     private TextField usernameTextField; 
@@ -39,32 +30,25 @@ public class LoginController extends SignInMethods{
     private Parent root;
 
 
-    public void checkUsername(KeyEvent event){
-        String input = usernameTextField.getText();
-
-        // if(!isUsernameValid(input)){
-        //         fillToError(usernameMessage);
-        //         usernameMessage.setText("format: at least 1 letters, diget, _ and from 5 to 15 character");
-        // } else if (isUsernameValid(input)) {
-        //         toCorrect(usernameMessage);
-        // }
+    @FXML
+    private void checkUsername(KeyEvent event) {
+        check(usernameTextField, usernameMessage, Regex.usernameRegex, ErrorMessage.usernameErrorMessage);
     }
 
-    public void checkPassword(KeyEvent event){
-        String input = passwordPasswordField.getText();
-
-        // if(!isPasswordValid(input)){
-        //         fillToError(passwordMessage);
-        //         passwordMessage.setText("format: letters, digets from 6 to 15 character");
-        // } else if (isPasswordValid(input)) {
-        //         toCorrect(passwordMessage);
-        // }
+    @FXML
+    private void checkPassword(KeyEvent event) {
+        check(passwordPasswordField, passwordMessage, Regex.passwordRegex, ErrorMessage.passwordErrorMessage);
     }
 
+    @FXML
     public void afterLogin(ActionEvent event){
-        System.out.println("change scene to user pannl");
+        Label[] messages = {usernameMessage, passwordMessage, captchaCodeMessage};
+        if (isEveryThingOk(messages)) {
+            System.out.println("Wellcome!");
+        }
     }
 
+    @FXML
     public void afterSignUp(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("../../FXMLFiles/SignUp.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -73,8 +57,13 @@ public class LoginController extends SignInMethods{
         stage.show();
     }
 
-    public void afterForgetPassword(ActionEvent event){
-
+    @FXML
+    public void afterForgetPassword(ActionEvent event) throws IOException{
+        root = FXMLLoader.load(getClass().getResource("../../FXMLFiles/ForgetPassword.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
     
                         
