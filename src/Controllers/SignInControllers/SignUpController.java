@@ -24,6 +24,7 @@ import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import javafx.stage.FileChooser;
 import java.io.File;
+import java.io.FileInputStream;
 
 public class SignUpController extends SignInMethods implements Initializable{
     @FXML
@@ -46,6 +47,18 @@ public class SignUpController extends SignInMethods implements Initializable{
 
     @FXML
     private ComboBox<String> countryNumbersComboBox;
+
+    private Image captchaImage;
+        
+    // {
+    //     try {
+    //         captchaImage = new Image(getClass().getResourceAsStream("/Image//CAPTCHA_code.png"));
+    //         captchaImageView = new ImageView();
+    //         captchaImageView.setImage(captchaImage);
+    //     } catch (Exception e) {
+    //         System.out.println(e.getMessage());
+    //     }
+    // }
 
 
     private String[] countryNumbers = 
@@ -84,6 +97,12 @@ public class SignUpController extends SignInMethods implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         countryNumbersComboBox.getItems().addAll(countryNumbers);
+        showCaptchaImage();
+    }
+
+    public void showCaptchaImage() {
+        captchaImage = new Image(getClass().getResourceAsStream("/Image/CAPTCHA_code.png"));
+        captchaImageView.setImage(captchaImage);
     }
 
     

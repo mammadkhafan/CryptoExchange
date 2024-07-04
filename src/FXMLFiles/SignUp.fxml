@@ -39,11 +39,7 @@
                </font>
             </Label>
             <Button fx:id="pickFileButton" layoutX="197.0" layoutY="322.0" mnemonicParsing="false" onAction="#afterPickFile" text="pick file" />
-            <ImageView fx:id="captchaImageView" fitHeight="53.0" fitWidth="191.0" layoutX="304.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Image/CAPTCHA_code.png" />
-               </image>
-            </ImageView>
+            <ImageView fx:id="captchaImageView" fitHeight="53.0" fitWidth="191.0" layoutX="304.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true" />
             <Button fx:id="createMyAccountButton" layoutX="101.0" layoutY="387.0" mnemonicParsing="false" onAction="#afterCreateMyAccount" text="Create my account">
                <font>
                   <Font size="35.0" />
