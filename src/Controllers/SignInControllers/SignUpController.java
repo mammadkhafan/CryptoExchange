@@ -24,7 +24,6 @@ import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import javafx.stage.FileChooser;
 import java.io.File;
-import java.io.FileInputStream;
 
 public class SignUpController extends SignInMethods implements Initializable{
     @FXML
@@ -40,7 +39,7 @@ public class SignUpController extends SignInMethods implements Initializable{
     private Button pickFileButton, createMyAccountButton;
 
     @FXML
-    private FontAwesomeIcon backIcon;
+    private FontAwesomeIcon backIcon, changeIcon;
 
     @FXML
     private ImageView captchaImageView, profileImage;
@@ -49,17 +48,6 @@ public class SignUpController extends SignInMethods implements Initializable{
     private ComboBox<String> countryNumbersComboBox;
 
     private Image captchaImage;
-        
-    // {
-    //     try {
-    //         captchaImage = new Image(getClass().getResourceAsStream("/Image//CAPTCHA_code.png"));
-    //         captchaImageView = new ImageView();
-    //         captchaImageView.setImage(captchaImage);
-    //     } catch (Exception e) {
-    //         System.out.println(e.getMessage());
-    //     }
-    // }
-
 
     private String[] countryNumbers = 
     {"Brazil +55", 
@@ -89,6 +77,26 @@ public class SignUpController extends SignInMethods implements Initializable{
     "Vietnam +84", 
     "Yemen +967"};
 
+    private Image[] captchaImages =
+    {
+    new Image(getClass().getResourceAsStream("/Image/captchas/captcha1.png")),
+    new Image(getClass().getResourceAsStream("/Image/captchas/captcha2.png")),
+    new Image(getClass().getResourceAsStream("/Image/captchas/captcha3.png")),
+    new Image(getClass().getResourceAsStream("/Image/captchas/captcha4.png")),
+    new Image(getClass().getResourceAsStream("/Image/captchas/captcha5.png")),
+    new Image(getClass().getResourceAsStream("/Image/captchas/captcha6.png")),
+    new Image(getClass().getResourceAsStream("/Image/captchas/captcha7.png")),
+    new Image(getClass().getResourceAsStream("/Image/captchas/captcha8.png")),
+    new Image(getClass().getResourceAsStream("/Image/captchas/captcha9.png")),
+    new Image(getClass().getResourceAsStream("/Image/captchas/captcha10.png")),
+    new Image(getClass().getResourceAsStream("/Image/captchas/captcha11.png")),
+    new Image(getClass().getResourceAsStream("/Image/captchas/captcha12.png")),
+    new Image(getClass().getResourceAsStream("/Image/captchas/captcha13.png")),
+    new Image(getClass().getResourceAsStream("/Image/captchas/captcha14.png")),
+    new Image(getClass().getResourceAsStream("/Image/captchas/captcha15.png"))
+    };
+    
+
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -97,11 +105,13 @@ public class SignUpController extends SignInMethods implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         countryNumbersComboBox.getItems().addAll(countryNumbers);
-        showCaptchaImage();
+        changeCaptchaCodeImage();
     }
 
-    public void showCaptchaImage() {
-        captchaImage = new Image(getClass().getResourceAsStream("/Image/CAPTCHA_code.png"));
+    public void changeCaptchaCodeImage() {
+        int lastIndexOfCaptchase = 10;
+        int randomIndex = (int)(Math.random() * (lastIndexOfCaptchase));        
+        captchaImage = captchaImages[randomIndex];
         captchaImageView.setImage(captchaImage);
     }
 
@@ -181,6 +191,11 @@ public class SignUpController extends SignInMethods implements Initializable{
         if (isEveryThingOk(messages)) {
             System.out.println("wellcom to user pannel");
         }
+    }
+
+    @FXML
+    private void afterChange() {
+        changeCaptchaCodeImage();
     }
 
     @FXML

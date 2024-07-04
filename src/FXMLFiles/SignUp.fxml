@@ -39,7 +39,7 @@
                </font>
             </Label>
             <Button fx:id="pickFileButton" layoutX="197.0" layoutY="322.0" mnemonicParsing="false" onAction="#afterPickFile" text="pick file" />
-            <ImageView fx:id="captchaImageView" fitHeight="53.0" fitWidth="191.0" layoutX="304.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="captchaImageView" fitHeight="53.0" fitWidth="186.0" layoutX="309.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true" />
             <Button fx:id="createMyAccountButton" layoutX="101.0" layoutY="387.0" mnemonicParsing="false" onAction="#afterCreateMyAccount" text="Create my account">
                <font>
                   <Font size="35.0" />
@@ -93,6 +93,7 @@
             <ImageView fitHeight="36.0" fitWidth="37.0" layoutX="131.0" layoutY="348.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="profileImage" fitHeight="36.0" fitWidth="37.0" layoutX="49.0" layoutY="348.0" pickOnBounds="true" preserveRatio="true" />
             <ComboBox fx:id="countryNumbersComboBox" layoutX="68.0" layoutY="210.0" prefHeight="34.0" prefWidth="89.0" />
+            <FontAwesomeIcon fx:id="changeIcon" glyphName="UNDO" layoutX="286.0" layoutY="343.0" onMouseClicked="#afterChange" size="2em" text="" wrappingWidth="18.85714340209961" />
          </children>
       </AnchorPane>
       <ImageView fitHeight="500.0" fitWidth="200.0" layoutX="628.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
