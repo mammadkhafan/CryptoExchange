@@ -39,11 +39,6 @@
                </font>
             </Label>
             <Button fx:id="pickFileButton" layoutX="197.0" layoutY="322.0" mnemonicParsing="false" onAction="#afterPickFile" text="pick file" />
-            <ImageView fx:id="captchaImageView" fitHeight="53.0" fitWidth="191.0" layoutX="304.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Image/CAPTCHA_code.png" />
-               </image>
-            </ImageView>
             <Button fx:id="createMyAccountButton" layoutX="101.0" layoutY="387.0" mnemonicParsing="false" onAction="#afterCreateMyAccount" text="Create my account">
                <font>
                   <Font size="35.0" />
@@ -69,7 +64,7 @@
                   <Font size="10.0" />
                </font>
             </Label>
-            <Label fx:id="captchaMessage" layoutX="311.0" layoutY="294.0" prefHeight="15.0" prefWidth="186.0">
+            <Label fx:id="captchaMessage" layoutX="311.0" layoutY="315.0" prefHeight="26.0" prefWidth="110.0">
                <font>
                   <Font size="10.0" />
                </font>
@@ -95,6 +90,7 @@
             <PasswordField fx:id="captchaCodePasswordField" layoutX="311.0" layoutY="259.0" onAction="#checkCaptchaCode" prefHeight="34.0" prefWidth="186.0" promptText="CAPTCHA code" />
             <PasswordField fx:id="repeatPasswordPasswordField1" layoutX="68.0" layoutY="260.0" onKeyPressed="#checkRepeatPassword" prefHeight="34.0" prefWidth="186.0" promptText="Repeat Password" />
             <ChoiceBox fx:id="countryChoceBox" layoutX="69.0" layoutY="210.0" prefHeight="34.0" prefWidth="47.0" />
+            <Label fx:id="captchaImage" layoutX="331.0" layoutY="315.0" prefHeight="36.0" prefWidth="146.0" />
          </children>
       </AnchorPane>
       <ImageView fitHeight="500.0" fitWidth="200.0" layoutX="628.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
@@ -104,5 +100,3 @@
       </ImageView>
    </children>
 </AnchorPane>
-
-
