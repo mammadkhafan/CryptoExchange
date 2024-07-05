@@ -79,21 +79,21 @@ public class SignUpController extends SignInMethods implements Initializable{
 
     private Image[] captchaImages =
     {
-    new Image(getClass().getResourceAsStream("/Image/captchas/captcha1.png")),
-    new Image(getClass().getResourceAsStream("/Image/captchas/captcha2.png")),
-    new Image(getClass().getResourceAsStream("/Image/captchas/captcha3.png")),
-    new Image(getClass().getResourceAsStream("/Image/captchas/captcha4.png")),
-    new Image(getClass().getResourceAsStream("/Image/captchas/captcha5.png")),
-    new Image(getClass().getResourceAsStream("/Image/captchas/captcha6.png")),
-    new Image(getClass().getResourceAsStream("/Image/captchas/captcha7.png")),
-    new Image(getClass().getResourceAsStream("/Image/captchas/captcha8.png")),
-    new Image(getClass().getResourceAsStream("/Image/captchas/captcha9.png")),
-    new Image(getClass().getResourceAsStream("/Image/captchas/captcha10.png")),
-    new Image(getClass().getResourceAsStream("/Image/captchas/captcha11.png")),
-    new Image(getClass().getResourceAsStream("/Image/captchas/captcha12.png")),
-    new Image(getClass().getResourceAsStream("/Image/captchas/captcha13.png")),
-    new Image(getClass().getResourceAsStream("/Image/captchas/captcha14.png")),
-    new Image(getClass().getResourceAsStream("/Image/captchas/captcha15.png"))
+    new Image(getClass().getResourceAsStream("../../Image/captchas/captcha1.png")),
+    new Image(getClass().getResourceAsStream("../../Image/captchas/captcha2.png")),
+    new Image(getClass().getResourceAsStream("../../Image/captchas/captcha3.png")),
+    new Image(getClass().getResourceAsStream("../../Image/captchas/captcha4.png")),
+    new Image(getClass().getResourceAsStream("../../Image/captchas/captcha5.png")),
+    new Image(getClass().getResourceAsStream("../../Image/captchas/captcha6.png")),
+    new Image(getClass().getResourceAsStream("../../Image/captchas/captcha7.png")),
+    new Image(getClass().getResourceAsStream("../../Image/captchas/captcha8.png")),
+    new Image(getClass().getResourceAsStream("../../Image/captchas/captcha9.png")),
+    new Image(getClass().getResourceAsStream("../../Image/captchas/captcha10.png")),
+    new Image(getClass().getResourceAsStream("../../Image/captchas/captcha11.png")),
+    new Image(getClass().getResourceAsStream("../../Image/captchas/captcha12.png")),
+    new Image(getClass().getResourceAsStream("../../Image/captchas/captcha13.png")),
+    new Image(getClass().getResourceAsStream("../../Image/captchas/captcha14.png")),
+    new Image(getClass().getResourceAsStream("../../Image/captchas/captcha15.png"))
     };
     
 
