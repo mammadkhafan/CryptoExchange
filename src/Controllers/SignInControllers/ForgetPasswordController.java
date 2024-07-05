@@ -23,18 +23,16 @@ public class ForgetPasswordController extends SignInMethods{
     private PasswordField 
             codePasswordField, 
             newPasswordPasswordField, 
-            repeatPawweordPasswordField;
+            repeatPasswordPasswordField;
     @FXML 
     private Button submitButton, loginButton;
     
     @FXML
     private FontAwesomeIcon backIcon;
 
+
     public void checkEmail() {
-        // String input = emailTextField.getText();
-        // if(!isEmailValid(input)){
-        //     emailMessage.setText("Error");
-        // }
+        check(emailTextField, emailMessage, Regex.emailRegex, ErrorMessage.emailErrorMessage);
     }
 
     public void checkCode() {
@@ -42,11 +40,11 @@ public class ForgetPasswordController extends SignInMethods{
     }
 
     public void checkNewPassword() {
-
+        check(newPasswordPasswordField, newPasswordMessage,Regex.passwordRegex, ErrorMessage.passwordErrorMessage);
     }
 
     public void checkRepeatPassword() {
-
+        check(repeatPasswordPasswordField, repeatPasswordMessage, Regex.passwordRegex, ErrorMessage.passwordErrorMessage);
     }
 
     public void afterSubmit() {
@@ -54,7 +52,7 @@ public class ForgetPasswordController extends SignInMethods{
     }
 
     public void afterLogin() {
-
+        
     }
 
     public void afterBack(MouseEvent event) {

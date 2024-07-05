@@ -40,25 +40,11 @@ public class LoginController extends SignInMethods{
 
 
     public void checkUsername(KeyEvent event){
-        String input = usernameTextField.getText();
-
-        // if(!isUsernameValid(input)){
-        //         fillToError(usernameMessage);
-        //         usernameMessage.setText("format: at least 1 letters, diget, _ and from 5 to 15 character");
-        // } else if (isUsernameValid(input)) {
-        //         toCorrect(usernameMessage);
-        // }
+        check(usernameTextField, usernameMessage, Regex.usernameRegex, ErrorMessage.usernameErrorMessage);
     }
 
     public void checkPassword(KeyEvent event){
-        String input = passwordPasswordField.getText();
-
-        // if(!isPasswordValid(input)){
-        //         fillToError(passwordMessage);
-        //         passwordMessage.setText("format: letters, digets from 6 to 15 character");
-        // } else if (isPasswordValid(input)) {
-        //         toCorrect(passwordMessage);
-        // }
+        check(passwordPasswordField, passwordMessage,Regex.passwordRegex, ErrorMessage.passwordErrorMessage);
     }
 
     public void afterLogin(ActionEvent event){

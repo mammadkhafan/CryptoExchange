@@ -84,4 +84,19 @@ public class SignInMethods {
 
         label.setText("Valid Input");
     }
+    public char[] printAlphabets() {
+        char[] array = new char[62];
+        int index = 0;
+        for (char i = 'a'; i <= 'z'; i++) {
+            array[index++] = i;
+        }
+        for(char i = '0';i <= '9';i++){
+            array[index++] = i;
+        }
+        for(char i = 'A';i <= 'Z';i++){
+            array[index++] = i;
+        }
+        return array;
+    }
+    
 }
